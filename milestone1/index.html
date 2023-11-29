@@ -10,10 +10,43 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app">{{ message }}</div>
+    <div id="app" class="d-flex justify-center align-center">
+      <div class="window">
+        <div class="left-side">
+          <div class="user-bar d-flex space-between">
+            <div class="left-icons d-flex align-center">
+              <img :src="userInfo[0].avatar" alt="" />
+              <h4 id="me">{{userInfo[0].name}}</h4>
+            </div>
+            <div class="right-icons d-flex align-center space-between">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div class="notifications d-flex align-center">
+            <div class="bell-background">
+              <i class="fas fa-bell-slash"></i>
+            </div>
+            <div class="notifications-texts">
+              <div class="strong">Ricevi notifiche di nuovi messaggi</div>
+              <a href="#">Attiva le notifiche desktop</a>
+            </div>
+          </div>
+        </div>
+        <div class="right-side"></div>
+      </div>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="main.mjs"></script>
   </body>
