@@ -81,6 +81,7 @@ body {
   width: 65%;
   min-width: 500px;
   height: 100%;
+  border-left: 1px solid gainsboro;
 }
 /* /boolzapp container */
 /* left side */
@@ -171,10 +172,10 @@ h4 {
 }
 /* /contacts */
 /* right area */
+
 main {
   height: 87%;
 }
-/* /right area */
 footer div {
   padding: 30px;
   font-size: 2rem;
@@ -191,6 +192,7 @@ footer div {
   flex-direction: column;
   padding: 100px;
 }
+/* /right area */
 
 .input-area i {
   color: #6b7376;
