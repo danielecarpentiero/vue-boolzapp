@@ -62,16 +62,29 @@
           </ul>
         </div>
         <div class="right-side">
+          <header>
             <div id="me" class="user-bar d-flex space-between">
-            <div class="left-icons d-flex align-center">
-              <img :src="userInfo[0].avatar" alt="" />
-              <h4>{{userInfo[0].name}}</h4>
-            </div>
-            <div class="right-icons d-flex align-center space-between">
+              <div class="left-icons d-flex align-center">
+                <img :src="contacts[0].avatar" alt="" />
+                <h4>{{contacts[0].name}}</h4>
+              </div>
+              <div class="right-icons d-flex align-center space-between">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-paperclip"></i>
-              <i class="fa-solid fa-ellipsis-vertical"></i>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
             </div>
+          </header>
+          <main>
+            <div class="message-box"></div>
+          </main>
+          <footer>
+            <div class="input-area d-flex space-between align-center">
+              <i class="far fa-smile"></i>
+              <input type="text" placeholder="Scrivi un messaggio" />
+              <i class="fas fa-microphone"></i>
+            </div>
+          </footer>
         </div>
       </div>
     </div>
