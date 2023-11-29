@@ -44,6 +44,12 @@ body {
   background-color: white;
   align-self: flex-start;
 }
+
+.date {
+  font-size: 10px;
+  color: #888;
+  margin-top: 5px;
+}
 /* /utilities */
 
 /* boolzapp background */
