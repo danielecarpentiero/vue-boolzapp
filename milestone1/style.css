@@ -148,14 +148,14 @@ h4 {
 }
 
 main {
-  height: 80%;
+  height: 87%;
 }
 
 footer div {
   padding: 30px;
   font-size: 2rem;
   width: 100%;
-  height: 145px;
+  height: 100%;
   padding: 10px 30px;
   background-color: #eaeaea;
   border-left: 1px solid lightgrey;
