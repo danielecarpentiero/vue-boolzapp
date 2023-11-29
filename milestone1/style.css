@@ -108,7 +108,7 @@ h4 {
   color: #b1b1b1;
   width: 100px;
 }
-.notifications {
+.notify-area {
   width: 100%;
   padding: 15px;
   background-color: #8edafc;
@@ -146,15 +146,15 @@ h4 {
   border: 1px solid #e5e5e5;
 }
 
-.strong {
+.news {
   font-weight: 700;
 }
 
-.notifications-texts > a {
+.notifications > a {
   color: grey;
   font-size: 14px;
 }
-
+/* contacts */
 .contacts {
   padding: 10px;
   width: 100%;
@@ -169,11 +169,12 @@ h4 {
 .contacts li:hover {
   background-color: #e5e5e5;
 }
-
+/* /contacts */
+/* right area */
 main {
   height: 87%;
 }
-
+/* /right area */
 footer div {
   padding: 30px;
   font-size: 2rem;
