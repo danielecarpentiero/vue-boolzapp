@@ -64,17 +64,20 @@ body {
 .user-bar {
   height: 70px;
   width: 100%;
-  background-color: #eaeaea;
   padding: 10px;
 }
 
 img {
   border-radius: 50%;
-  width: 10%;
+  height: 100%;
 }
 
 #me {
-  padding-left: 5px;
+  background-color: #eaeaea;
+}
+
+h4 {
+  padding-left: 10px;
 }
 
 .right-icons {
@@ -84,13 +87,11 @@ img {
 }
 .notifications {
   width: 100%;
-  height: 90px;
   padding: 15px;
   background-color: #8edafc;
 }
 
-.notifications .bell-background {
-  height: 60px;
+.bell {
   width: 60px;
   margin-right: 10px;
   line-height: 60px;
@@ -99,5 +100,50 @@ img {
   color: #8edafc;
   background-color: #fff;
   border-radius: 50%;
+}
+
+.chat-search {
+  width: 100%;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.search-icon {
+  text-align: center;
+  line-height: 35px;
+  width: 50px;
+  border-right: 0;
+  color: lightgrey;
+}
+.chat-search input {
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.notifications-texts > a {
+  color: grey;
+  font-size: 14px;
+}
+
+.contacts {
+  padding: 10px;
+  width: 100%;
+  height: 80%;
+  background-color: #ffffff;
+}
+
+.contacts li {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.contacts li:hover {
+  background-color: #e5e5e5;
 }
 /* /left side */

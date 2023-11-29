@@ -23,10 +23,10 @@
     <div id="app" class="d-flex justify-center align-center">
       <div class="window">
         <div class="left-side">
-          <div class="user-bar d-flex space-between">
+          <div id="me" class="user-bar d-flex space-between">
             <div class="left-icons d-flex align-center">
               <img :src="userInfo[0].avatar" alt="" />
-              <h4 id="me">{{userInfo[0].name}}</h4>
+              <h4>{{userInfo[0].name}}</h4>
             </div>
             <div class="right-icons d-flex align-center space-between">
               <i class="fa-solid fa-circle-notch"></i>
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="notifications d-flex align-center">
-            <div class="bell-background">
+            <div class="bell">
               <i class="fas fa-bell-slash"></i>
             </div>
             <div class="notifications-texts">
@@ -43,8 +43,36 @@
               <a href="#">Attiva le notifiche desktop</a>
             </div>
           </div>
+          <div class="chat-search d-flex">
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <input type="text" placeholder="Cerca o inizia una nuova chat" />
+          </div>
+          <ul class="contacts">
+            <li
+              v-for="(contact, index) in contacts"
+              class="user-bar me d-flex space-between"
+            >
+              <div class="left-icons d-flex">
+                <img :src="contacts[index].avatar" alt="" />
+                <h4>{{contacts[index].name}}</h4>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="right-side"></div>
+        <div class="right-side">
+            <div id="me" class="user-bar d-flex space-between">
+            <div class="left-icons d-flex align-center">
+              <img :src="userInfo[0].avatar" alt="" />
+              <h4>{{userInfo[0].name}}</h4>
+            </div>
+            <div class="right-icons d-flex align-center space-between">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+        </div>
       </div>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
