@@ -27,6 +27,23 @@ body {
 .space-between {
   justify-content: space-between;
 }
+
+.balloon {
+  border-radius: 20px;
+  padding: 15px 20px;
+  width: 33.333%;
+  margin-bottom: 10px;
+}
+
+.sender {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+}
+
+.recipient {
+  background-color: white;
+  align-self: flex-start;
+}
 /* /utilities */
 
 /* boolzapp background */
@@ -164,6 +181,8 @@ footer div {
 .message-box {
   background-image: url(img/mine.jpg);
   height: 100%;
+  flex-direction: column;
+  padding: 100px;
 }
 
 .input-area i {
