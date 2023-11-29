@@ -1,1 +1,1 @@
-# vue-boolzapp
+# Vue Boolzapp
