@@ -184,5 +184,23 @@ createApp({
       this.activeContact = this.contacts[index];
       this.activeConvo = index;
     },
+    sendMessage() {
+      let newSentMessage = {
+        message: this.newMessage,
+        status: "sent",
+        date: "30/11/2023",
+      };
+      this.activeContact.messages.push(newSentMessage);
+      this.newMessage = "";
+
+      setTimeout(() => {
+        let responseMessage = {
+          message: "Ok",
+          status: "received",
+          date: "30/11/2023",
+        };
+        this.activeContact.messages.push(responseMessage);
+      }, 1000);
+    },
   },
 }).mount("#app");
