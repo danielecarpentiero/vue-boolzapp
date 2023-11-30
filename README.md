@@ -1,5 +1,8 @@
 # Vue Boolzapp
 
+<img width="1920" alt="image" src="https://github.com/danielecarpentiero/vue-boolzapp/assets/140635529/ac3861b1-c632-4072-9db7-4c8f9135c99c">
+
+
 ## Milestone 1
 
 - Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse.
