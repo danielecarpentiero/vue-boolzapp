@@ -28,7 +28,7 @@
   <body>
     <!-- container messaggi -->
     <div id="app" class="d-flex justify-center align-center">
-      <div class="window">
+      <div class="window v-cloak">
         <!-- lato sinistro -->
         <div class="left-side">
           <!-- area utente -->
@@ -68,7 +68,10 @@
             >
               <div class="left-icons d-flex">
                 <img :src="contacts[index].avatar" alt="" />
-                <h4>{{contacts[index].name}}</h4>
+                <div class="details">
+                  <h4>{{contacts[index].name}}</h4>
+                  <h5 class="date">Ultimo messaggio inviato</h5>
+                </div>
               </div>
             </li>
           </ul>
@@ -80,7 +83,10 @@
           <header v-if="activeContact" class="user-bar me d-flex space-between">
             <div class="left-icons d-flex align-center">
               <img :src="activeContact.avatar" alt="" />
-              <h4>{{activeContact.name}}</h4>
+              <div class="details">
+                <h4>{{activeContact.name}}</h4>
+                <h5 class="date">Ultimo accesso oggi alle</h5>
+              </div>
             </div>
             <div class="right-icons d-flex align-center space-between">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -95,7 +101,16 @@
               class="message-box d-flex"
               :class="index === activeConvo"
               @click="setActiveConvo(index)"
-            ></div>
+            >
+              <div
+                v-for="message in activeContact.messages"
+                :key="message.date"
+                :class="[message.status === 'sent' ? 'balloon sender' : 'balloon recipient']"
+              >
+                {{ message.message }}
+                <div class="date">{{ message.date }}</div>
+              </div>
+            </div>
           </main>
           <!-- /zona messaggi -->
           <!-- input area -->

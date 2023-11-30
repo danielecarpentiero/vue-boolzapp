@@ -46,9 +46,10 @@ body {
 }
 
 .date {
-  font-size: 10px;
+  font-size: 12px;
   color: #888;
   margin-top: 5px;
+  padding-left: 10px;
 }
 /* /utilities */
 

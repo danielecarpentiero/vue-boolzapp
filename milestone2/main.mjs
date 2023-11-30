@@ -182,6 +182,7 @@ createApp({
     },
     showContact(index) {
       this.activeContact = this.contacts[index];
+      this.activeConvo = index;
     },
   },
 }).mount("#app");
