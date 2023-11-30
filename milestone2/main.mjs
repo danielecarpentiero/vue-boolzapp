@@ -172,6 +172,16 @@ createApp({
           ],
         },
       ],
+      activeConvo: null,
+      activeContact: [0],
     };
+  },
+  methods: {
+    setActiveConvo(index) {
+      this.activeConvo = index;
+    },
+    showContact(index) {
+      this.activeContact = this.contacts[index];
+    },
   },
 }).mount("#app");

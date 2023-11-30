@@ -64,6 +64,7 @@
             <li
               v-for="(contact, index) in contacts"
               class="user-bar d-flex space-between"
+              @click="showContact(index)"
             >
               <div class="left-icons d-flex">
                 <img :src="contacts[index].avatar" alt="" />
@@ -76,10 +77,10 @@
         <!-- lato destro -->
         <!-- area info messaggi -->
         <div class="right-side">
-          <header class="user-bar me d-flex space-between">
+          <header v-if="activeContact" class="user-bar me d-flex space-between">
             <div class="left-icons d-flex align-center">
-              <img :src="contacts[0].avatar" alt="" />
-              <h4>{{contacts[0].name}}</h4>
+              <img :src="activeContact.avatar" alt="" />
+              <h4>{{activeContact.name}}</h4>
             </div>
             <div class="right-icons d-flex align-center space-between">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -90,7 +91,11 @@
           <!-- /area info messaggi -->
           <!-- zona messaggi -->
           <main>
-            <div class="message-box d-flex"></div>
+            <div
+              class="message-box d-flex"
+              :class="index === activeConvo"
+              @click="setActiveConvo(index)"
+            ></div>
           </main>
           <!-- /zona messaggi -->
           <!-- input area -->
