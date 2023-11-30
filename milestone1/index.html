@@ -32,7 +32,7 @@
         <!-- lato sinistro -->
         <div class="left-side">
           <!-- area utente -->
-          <div id="me" class="user-bar d-flex space-between">
+          <div class="user-bar me d-flex space-between">
             <div class="left-icons d-flex align-center">
               <img :src="userInfo[0].avatar" alt="" />
               <h4>{{userInfo[0].name}}</h4>
@@ -63,7 +63,7 @@
           <ul class="contacts">
             <li
               v-for="(contact, index) in contacts"
-              class="user-bar me d-flex space-between"
+              class="user-bar d-flex space-between"
             >
               <div class="left-icons d-flex">
                 <img :src="contacts[index].avatar" alt="" />
@@ -76,17 +76,15 @@
         <!-- lato destro -->
         <!-- area info messaggi -->
         <div class="right-side">
-          <header>
-            <div id="me" class="user-bar d-flex space-between">
-              <div class="left-icons d-flex align-center">
-                <img :src="contacts[0].avatar" alt="" />
-                <h4>{{contacts[0].name}}</h4>
-              </div>
-              <div class="right-icons d-flex align-center space-between">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-paperclip"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
+          <header class="user-bar me d-flex space-between">
+            <div class="left-icons d-flex align-center">
+              <img :src="contacts[0].avatar" alt="" />
+              <h4>{{contacts[0].name}}</h4>
+            </div>
+            <div class="right-icons d-flex align-center space-between">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
             </div>
           </header>
           <!-- /area info messaggi -->
