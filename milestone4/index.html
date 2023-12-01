@@ -103,8 +103,8 @@
           <main>
             <div
               class="message-box d-flex"
-              :class="index === activeConvo"
-              @click="setActiveConvo(index)"
+              :class="index === activeContact"
+              @click="showContact(index)"
             >
               <div
                 v-for="message in activeContact.messages"
