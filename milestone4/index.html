@@ -56,13 +56,18 @@
             <div class="search-icon">
               <i class="fas fa-search"></i>
             </div>
-            <input type="text" placeholder="Cerca o inizia una nuova chat" />
+            <input
+              type="text"
+              v-model="searchQuery"
+              placeholder="Cerca o inizia una nuova chat"
+            />
           </div>
           <!-- /area utente -->
           <!-- lista contatti -->
           <ul class="contacts">
             <li
-              v-for="(contact, index) in contacts"
+              v-for="(contact, index) in filteredContacts"
+              :key="index"
               class="user-bar d-flex space-between"
               @click="showContact(index)"
             >

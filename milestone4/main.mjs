@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      searchQuery: "",
       userInfo: [
         {
           name: "Daniele",
@@ -175,6 +176,16 @@ createApp({
       activeConvo: null,
       activeContact: [0],
     };
+  },
+  computed: {
+    filteredContacts() {
+      return this.contacts.filter((contact) => {
+        return (
+          contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()) &&
+          contact.visible
+        );
+      });
+    },
   },
   methods: {
     setActiveConvo(index) {
