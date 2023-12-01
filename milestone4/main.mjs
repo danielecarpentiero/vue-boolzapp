@@ -3,6 +3,8 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      index: 0,
+      newMessage: "",
       searchQuery: "",
       userInfo: [
         {
