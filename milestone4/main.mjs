@@ -177,17 +177,10 @@ createApp({
       activeContact: [0],
     };
   },
-  computed: {
-    filteredContacts() {
-      return this.contacts.filter((contact) => {
-        return (
-          contact.name.toLowerCase().includes(this.searchQuery.toLowerCase()) &&
-          contact.visible
-        );
-      });
-    },
-  },
   methods: {
+    setActiveConvo(index) {
+      this.activeConvo = index;
+    },
     showContact(index) {
       this.activeContact = this.contacts[index];
       this.activeConvo = index;
@@ -209,6 +202,13 @@ createApp({
         };
         this.activeContact.messages.push(responseMessage);
       }, 1000);
+    },
+    getFilteredContacts() {
+      return this.contacts.filter((contact) => {
+        return contact.name
+          .toLowerCase()
+          .includes(this.searchQuery.toLowerCase());
+      });
     },
   },
 }).mount("#app");
