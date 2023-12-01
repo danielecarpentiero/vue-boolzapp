@@ -188,9 +188,6 @@ createApp({
     },
   },
   methods: {
-    setActiveConvo(index) {
-      this.activeConvo = index;
-    },
     showContact(index) {
       this.activeContact = this.contacts[index];
       this.activeConvo = index;
