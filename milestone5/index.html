@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- /font google -->
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- /font awesome -->
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- /css -->
+  </head>
+  <body>
+    <!-- container messaggi -->
+    <div id="app" class="d-flex justify-center align-center">
+      <div class="window v-cloak">
+        <!-- lato sinistro -->
+        <div class="left-side">
+          <!-- area utente -->
+          <div class="user-bar me d-flex space-between">
+            <div class="left-icons d-flex align-center">
+              <img :src="userInfo[0].avatar" alt="" />
+              <h4>{{userInfo[0].name}}</h4>
+            </div>
+            <div class="right-icons d-flex align-center space-between">
+              <i class="fa-solid fa-circle-notch"></i>
+              <i class="fa-solid fa-message"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          <div class="notify-area d-flex align-center">
+            <div class="bell">
+              <i class="fas fa-bell-slash"></i>
+            </div>
+            <div class="notifications">
+              <div class="news">Ricevi notifiche di nuovi messaggi</div>
+              <a href="#">Attiva le notifiche desktop</a>
+            </div>
+          </div>
+          <div class="chat-search d-flex">
+            <div class="search-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <input
+              type="text"
+              placeholder="Cerca o inizia una nuova chat"
+              v-model="searchQuery"
+            />
+          </div>
+          <!-- /area utente -->
+          <!-- lista contatti -->
+          <ul class="contacts">
+            <li
+              v-for="(contact, index) in getFilteredContacts()"
+              class="user-bar d-flex space-between"
+              @click="showContact(index)"
+            >
+              <div class="left-icons d-flex">
+                <img :src="contact.avatar" alt="" />
+                <div class="details">
+                  <h4>{{contact.name}}</h4>
+                  <h5 class="date">Ultimo messaggio inviato</h5>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- /lista contatti -->
+        </div>
+        <!-- lato destro -->
+        <!-- area info messaggi -->
+        <div class="right-side">
+          <header v-if="activeContact" class="user-bar me d-flex space-between">
+            <div class="left-icons d-flex align-center">
+              <img :src="activeContact.avatar" alt="" />
+              <div class="details">
+                <h4>{{activeContact.name}}</h4>
+                <h5 class="date">Ultimo accesso oggi alle</h5>
+              </div>
+            </div>
+            <div class="right-icons d-flex align-center space-between">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <i class="fa-solid fa-paperclip"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </header>
+          <!-- /area info messaggi -->
+          <!-- zona messaggi -->
+          <main>
+            <div
+              class="message-box d-flex"
+              :class="index === activeContact"
+              @click="showContact(index)"
+            >
+              <div
+                v-for="message in activeContact.messages"
+                :key="message.date"
+                :class="[message.status === 'sent' ? 'balloon sender' : 'balloon recipient']"
+              >
+                {{ message.message }}
+                <div class="date">{{ message.date }}</div>
+              </div>
+            </div>
+          </main>
+          <!-- /zona messaggi -->
+          <!-- input area -->
+          <footer>
+            <div class="input-area d-flex space-between align-center">
+              <i class="far fa-smile"></i>
+              <input
+                type="text"
+                placeholder="Scrivi un messaggio"
+                v-model="newMessage"
+                @keyup.enter="sendMessage"
+              />
+              <i class="fas fa-microphone"></i>
+            </div>
+          </footer>
+          <!-- /input area -->
+        </div>
+      </div>
+    </div>
+    <!-- /container messaggi -->
+    <!-- miei script -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.mjs"></script>
+    <!-- /miei script -->
+  </body>
+</html>
