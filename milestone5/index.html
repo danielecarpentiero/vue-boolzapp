@@ -110,11 +110,14 @@
                 v-for="message in activeContact.messages"
                 :key="message.date"
                 :class="[message.status === 'sent' ? 'balloon sender' : 'balloon recipient']"
+                @click="showDropdown(message)"
               >
                 {{ message.message }}
                 <div class="date">{{ message.date }}</div>
+                <div v-if="message.showDropdown === true" class="dropdown">
+                  <button @click="deleteMessage(message)">Cancella il messaggio</button>
+                </div>
               </div>
-              
             </div>
           </main>
           <!-- /zona messaggi -->

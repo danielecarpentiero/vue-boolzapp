@@ -208,5 +208,20 @@ createApp({
           .includes(this.searchQuery.toLowerCase());
       });
     },
+    showDropdown(message) {
+      this.activeContact.messages.forEach((msg) => {
+        if (msg == message) {
+          msg.showDropdown = !msg.showDropdown;
+        } else {
+          msg.showDropdown = false;
+        }
+      });
+    },
+    deleteMessage(message) {
+      const index = this.activeContact.messages.indexOf(message);
+      if (index > -1) {
+        this.activeContact.messages.splice(index, 1);
+      }
+    },
   },
 }).mount("#app");
