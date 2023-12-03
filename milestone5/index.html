@@ -104,7 +104,7 @@
             <div
               class="message-box d-flex"
               :class="index === activeContact"
-              @click="showContact(index)"
+              @click="showContact(activeContact)"
             >
               <div
                 v-for="message in activeContact.messages"
@@ -114,6 +114,7 @@
                 {{ message.message }}
                 <div class="date">{{ message.date }}</div>
               </div>
+              
             </div>
           </main>
           <!-- /zona messaggi -->
