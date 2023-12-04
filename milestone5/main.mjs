@@ -175,7 +175,6 @@ createApp({
           ],
         },
       ],
-      activeConvo: null,
       activeContact: [0],
     };
   },
