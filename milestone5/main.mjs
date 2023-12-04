@@ -180,7 +180,8 @@ createApp({
     };
   },
   methods: {
-    showContact(index) {
+    showContact(contact) {
+      let index = this.contacts.indexOf(contact);
       this.activeContact = this.contacts[index];
     },
     sendMessage() {

@@ -66,9 +66,9 @@
           <!-- lista contatti -->
           <ul class="contacts">
             <li
-              v-for="(contact, index) in getFilteredContacts()"
+              v-for="contact in getFilteredContacts()"
               class="user-bar d-flex space-between"
-              @click="showContact(index)"
+              @click="showContact(contact)"
             >
               <div class="left-icons d-flex">
                 <img :src="contact.avatar" alt="" />
@@ -115,7 +115,9 @@
                 {{ message.message }}
                 <div class="date">{{ message.date }}</div>
                 <div v-if="message.showDropdown === true" class="dropdown">
-                  <button @click="deleteMessage(message)">Cancella il messaggio</button>
+                  <button @click="deleteMessage(message)">
+                    Cancella il messaggio
+                  </button>
                 </div>
               </div>
             </div>
